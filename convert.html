@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency converter - مرصد</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg ki-nav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/marsad-logo.svg" alt="" class="ki-logo">مرصد</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                    aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Football</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="standings.html">Standings</a></li>
+                                <li><a class="dropdown-item" href="fixtures.html">Fixtures</a></li>
+                                <li><a class="dropdown-item" href="stats.html">Stats</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="convert.html">Currency converter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="ki-form-page">
+            <h1 class="ki-section">Currency converter</h1>
+            <div class="ki-panel">
+                <div class="row g-3 align-items-end">
+                    <div class="col-5">
+                        <label for="from" class="form-label">From</label>
+                        <select class="form-select" id="from">
+                            <option>USD</option><option>EUR</option><option>SAR</option><option>GBP</option><option>EGP</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button type="button" class="btn btn-outline-secondary w-100" id="swapBtn" title="Swap currencies">&#8644;</button>
+                    </div>
+                    <div class="col-5">
+                        <label for="to" class="form-label">To</label>
+                        <select class="form-select" id="to">
+                            <option>EGP</option><option>USD</option><option>EUR</option><option>SAR</option><option>GBP</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label for="amount" class="form-label">Amount</label>
+                        <input type="number" min="0" step="any" class="form-control" id="amount" placeholder="100">
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="btn ki-btn w-100" id="convertBtn">Convert</button>
+                    </div>
+                    <div class="col-12">
+                        <div class="ki-result">
+                            <span>Result</span>
+                            <b id="convertResult">—</b>
+                        </div>
+                        <small class="text-muted d-block mt-2" id="rateInfo"></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="ki-footer">
+        <p class="text-center mb-0">All rights reserved to Marsad (مرصد) for latest news 2026</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="Javascript/convert.js"></script>
+</body>
+
+</html>

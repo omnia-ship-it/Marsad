@@ -1,0 +1,413 @@
+:root {
+    --ki-bg: #F1F3F7;
+    --ki-ink: #0E1A2B;
+    --ki-soft: #5B6778;
+    --ki-blue: #2B44FF;
+    --ki-live: #E5383B;
+    --ki-card: #FFFFFF;
+    --ki-line: #DDE2EA;
+}
+
+body {
+    background: var(--ki-bg);
+    color: var(--ki-ink);
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+h1, h2, h3, h4, .navbar-brand {
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+/* Navbar */
+.ki-nav {
+    background: var(--ki-ink);
+    padding: 14px 0;
+    margin-bottom: 28px;
+}
+
+.ki-nav .navbar-brand {
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ki-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--ki-blue);
+    font-size: 1.05rem;
+}
+
+.ki-nav .nav-link {
+    color: #B8C2D3;
+    font-weight: 600;
+    padding: 8px 16px;
+}
+
+.ki-nav .nav-link:hover,
+.ki-nav .nav-link.active {
+    color: #fff;
+}
+
+.ki-nav .navbar-toggler {
+    border-color: #4A5870;
+    filter: invert(1);
+}
+
+@media (min-width: 992px) {
+    .ki-nav .container {
+        position: relative;
+    }
+
+    .ki-nav .navbar-nav.mx-auto {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Section headings */
+.ki-section {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 34px 0 16px;
+    padding-left: 12px;
+    border-left: 6px solid var(--ki-blue);
+}
+
+.ki-section:first-child {
+    margin-top: 0;
+}
+
+/* News cards */
+.ki-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.ki-card:hover h3 {
+    color: var(--ki-blue);
+}
+
+.ki-thumb {
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.t1 { background: linear-gradient(135deg, #2B44FF, #7A8CFF); }
+.t2 { background: linear-gradient(135deg, #0E1A2B, #3B5378); }
+.t3 { background: linear-gradient(135deg, #E5383B, #FF9A6B); }
+
+.ki-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ki-card time {
+    font-size: 0.85rem;
+    color: var(--ki-soft);
+}
+
+.ki-source-badge {
+    background: #1FAE59;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.ki-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 4px 0 0;
+}
+
+/* Sidebar panels */
+.ki-panel {
+    background: var(--ki-card);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.ki-panel h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.ki-panel h4 small {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--ki-soft);
+    margin-left: 6px;
+}
+
+.ki-weather {
+    background: var(--ki-ink);
+    color: #fff;
+    text-align: center;
+}
+
+.ki-weather-icon {
+    font-size: 3rem;
+    display: block;
+    line-height: 1;
+}
+
+.ki-weather h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 4px 0 0;
+}
+
+.ki-weather h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #B8C2D3;
+    margin: 0;
+}
+
+/* Currency rows (built by currency.js) */
+#currency .row {
+    border-top: 1px solid var(--ki-line);
+    margin: 0;
+    padding: 10px 0;
+}
+
+#currency .row h4 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+#currency .row h4:last-child {
+    text-align: right;
+    color: var(--ki-blue);
+}
+
+/* Live matches */
+.ki-match {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid var(--ki-line);
+}
+
+.ki-match b {
+    background: var(--ki-ink);
+    color: #fff;
+    border-radius: 8px;
+    padding: 2px 10px;
+}
+
+#live-matches h4 {
+    display: flex;
+    align-items: center;
+}
+
+.ki-live-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--ki-live);
+    margin-right: 8px;
+    animation: ki-pulse 1.4s infinite;
+}
+
+@keyframes ki-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+}
+
+.ki-live-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--ki-live);
+    margin-left: 8px;
+    animation: ki-pulse 1.4s infinite;
+}
+
+@keyframes ki-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.ki-live-match {
+    padding: 10px 0;
+    border-top: 1px solid var(--ki-line);
+}
+
+.ki-live-match:first-child {
+    border-top: none;
+}
+
+.ki-live-match .ki-live-teams {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.ki-live-match .ki-live-teams b {
+    background: var(--ki-live);
+    color: #fff;
+    border-radius: 8px;
+    padding: 2px 10px;
+}
+
+.ki-live-match .ki-live-minute {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--ki-live);
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+/* Footer */
+.ki-footer {
+    margin-top: 48px;
+    background: var(--ki-ink);
+    color: #B8C2D3;
+    padding: 18px 0;
+}
+
+/* Logo */
+.ki-logo {
+    width: 38px;
+    height: 38px;
+}
+
+/* Article */
+.ki-article {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.ki-article h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.ki-article time,
+.ki-source {
+    color: var(--ki-soft);
+    font-size: 0.95rem;
+}
+
+.ki-article-img {
+    margin: 18px 0;
+    aspect-ratio: 16 / 9;
+}
+
+.ki-article p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+}
+
+/* Forms (converter, filters) */
+.ki-form-page {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.ki-panel .form-control,
+.ki-panel .form-select {
+    border-color: var(--ki-line);
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+.ki-panel .form-control:focus,
+.ki-panel .form-select:focus {
+    border-color: var(--ki-blue);
+    box-shadow: 0 0 0 0.2rem rgba(43, 68, 255, 0.15);
+}
+
+.ki-btn {
+    background: var(--ki-blue);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 11px;
+}
+
+.ki-btn:hover {
+    background: #1E33D6;
+    color: #fff;
+}
+
+.ki-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--ki-bg);
+    border-radius: 10px;
+    padding: 14px 18px;
+}
+
+.ki-result b {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.5rem;
+    color: var(--ki-blue);
+}
+
+/* Tables and lists */
+.ki-table th {
+    color: var(--ki-soft);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.ki-fixture {
+    padding: 12px 0;
+    border-top: 1px solid var(--ki-line);
+}
+
+.ki-fixture small {
+    color: var(--ki-soft);
+}
+
+.ki-fixture .ki-match {
+    border-top: none;
+    padding: 4px 0 0;
+}
+
+.ki-stat {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ki-stat li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid var(--ki-line);
+}
+
+.ki-stat b {
+    color: var(--ki-blue);
+}
